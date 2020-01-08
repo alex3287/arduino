@@ -1,0 +1,18 @@
+.picture{
+  display: flex;
+  justify-content: space-between;
+}
+
+.pic3{
+  max-height: 250px !important;
+  /* width: 150px; */
+  border: 0 !important;
+  /* box-shadow: none !important; */
+}
+
+.leftpic{
+  float: left;;
+  
+  margin-right: 5px;
+
+}
