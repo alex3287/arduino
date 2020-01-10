@@ -28,16 +28,10 @@
 				<section>
 					<div class="picture"> 
 						<img src="img/logo.png" alt="" style="max-height: 150px; margin-left: -10px; padding-left: 0; border:0">
-						<img src="img/qr.png" alt="" style="max-height: 150px;">
 						
 						</div>
 					<h3>Семисегментный индикатор</h3>
 					<h1>Arduino</h1>
-					<div class="picture">
-						<img class="pic3" src="img/Arduino_Mega.jpg" alt="" style="max-height: 300px;">
-						<img class="pic3" src="img/Arduino_Nano.jpg" alt="" style="max-height: 150px;">
-						<img class="pic3" src="img/arduino_uno.jpg" alt="" style="max-height: 300px;">
-					</div>
 				</section>
 
 				<section data-markdown>		
@@ -137,11 +131,21 @@
 				</section>
 				<section>
 					<section>
-						<h2>Схема проекта</h2>
-					</section>
-					<section>
-						<img style="width: 70%;"	src="img/maket_schem.jpg" alt="">
-					</section>
+						<h2>Способ подключения</h2>
+						<div style="display: flex; justify-content:space-around; "> 
+							<ul>
+								<li>pin2 - A</li>
+								<li>pin3 - B</li>
+								<li>pin4 - C</li>
+								<li>pin5 - D</li>
+								<li>pin6 - E</li>
+								<li>pin7 - F</li>
+								<li>pin8 - G</li>
+								<li>pin9 - DP</li>
+							</ul>
+							<img src="img/7segmentSheme.png" alt="" style="max-height: 370px; border:0;">
+						</div>
+          </section>
 				</section>
 				<section>
 					<section>
@@ -162,10 +166,31 @@
 						</code></pre>		
 					</section>
 				</section>
-				
-				<section>
-					<h2>Проверка оборудования</h2>
-				</section>
+			<section>
+				<h2>Цифра 4</h2>
+				<pre><code>
+int four[8] = {0,1,1,0,0,1,1,0};
+
+void setup() {
+  for(int pin = 2; pin < 10; pin++){
+      pinMode(pin, OUTPUT);
+  }
+  for(int pin = 2; pin < 10; pin++){
+      digitalWrite(pin, HIGH);
+      delay(300);
+      digitalWrite(pin, LOW);
+  }
+}
+void loop() {
+  for (int i = 0; i < 8; i++){
+    if (four[i] == 1)  
+        digitalWrite(i+2, HIGH);
+    else 
+        digitalWrite(i+2, LOW);
+  }
+}
+				</code></pre>
+			</section>	
 				<!-- code project -->
 			<section>
 				<h2>Scetch</h2>
@@ -208,16 +233,8 @@
 					}
 				}
 				</code></pre>
-				<p>Код проекта находится в рабочей папке: Документы\Arduino\progs\public_lesson</p>
+				<p>Код проекта находится в рабочей папке: Документы\Arduino\progs\7segment</p>
 			</section>
-				<section data-markdown>
-					### Задание для самостоятельного решения
-
-					* Загрузите код на Arduino
-					* Запустите монитор портов и проверьте показания поступающие с датчиков
-					* Сделайте соответствующие поправки в коде
-					* Измените паузу свечения светодиода
-				</section >
 			</div>
 		</div>
 
